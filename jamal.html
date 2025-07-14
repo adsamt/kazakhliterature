@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>不幸的贾玛尔 - Steppe Voices</title>
+  <title>不幸的贾玛尔 – Steppe Voices</title>
   <style>
     body {
       font-family: sans-serif;
@@ -21,48 +21,43 @@
       margin: 10px 5px;
       padding: 6px 12px;
       font-size: 1em;
+      border: none;
+      background: #333;
+      color: #fff;
       cursor: pointer;
     }
-    .pdf-container {
-      display: none;
-      width: 100%;
+    iframe {
+      width: 90%;
       height: 90vh;
-    }
-    .pdf-container.active {
-      display: block;
+      border: none;
     }
   </style>
-  <script>
-    function switchPDF(lang) {
-      document.querySelectorAll('.pdf-container').forEach(div => {
-        div.classList.remove('active');
-      });
-      const target = document.getElementById(`pdf-${lang}`);
-      if (target) target.classList.add('active');
-    }
-    window.onload = () => {
-      switchPDF('zh');
-    };
-  </script>
 </head>
 <body>
   <header>
-    <h1>不幸的贾玛尔 | Бақытсыз Жамал | The Unfortunate Jamal</h1>
+    <h1>《不幸的贾玛尔》 – Steppe Voices</h1>
     <div class="lang-switch">
-      <button onclick="switchPDF('zh')">中文</button>
-      <button onclick="switchPDF('kk')">Қазақша</button>
-      <button onclick="switchPDF('en')">English</button>
+      <button onclick="showPdf('zh')">中文</button>
+      <button onclick="showPdf('kk')">Қазақша</button>
+      <button onclick="showPdf('en')">English</button>
     </div>
   </header>
 
-  <div id="pdf-zh" class="pdf-container active">
-    <embed src="/assets/Jamal_zh.pdf#toolbar=0" type="application/pdf" width="100%" height="100%"/>
+  <div id="pdf-container">
+    <iframe id="pdf-frame" src="assets/Jamal_zh.pdf#toolbar=0" allowfullscreen></iframe>
   </div>
-  <div id="pdf-kk" class="pdf-container">
-    <embed src="/assets/Jamal_kk.pdf#toolbar=0" type="application/pdf" width="100%" height="100%"/>
-  </div>
-  <div id="pdf-en" class="pdf-container">
-    <p>英文版本尚未上传。</p>
-  </div>
+
+  <script>
+    function showPdf(lang) {
+      const frame = document.getElementById('pdf-frame');
+      if (lang === 'zh') {
+        frame.src = 'assets/Jamal_zh.pdf#toolbar=0';
+      } else if (lang === 'kk') {
+        frame.src = 'assets/Jamal_kk.pdf#toolbar=0';
+      } else if (lang === 'en') {
+        frame.src = 'assets/Jamal_en.pdf#toolbar=0';
+      }
+    }
+  </script>
 </body>
 </html>
