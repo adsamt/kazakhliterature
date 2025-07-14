@@ -1,30 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>不幸的贾玛尔 | Бақытсыз Жамал | The Unfortunate Jamal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>不幸的贾玛尔 - Steppe Voices</title>
   <style>
-    body { font-family: sans-serif; text-align: center; background: #f9f9f9; padding: 40px; }
-    h1 { margin-bottom: 30px; }
-    .link-group a {
-      display: block;
-      margin: 10px auto;
-      padding: 12px 20px;
-      width: 260px;
-      border-radius: 8px;
-      background: #333;
-      color: #fff;
-      text-decoration: none;
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      text-align: center;
     }
-    .link-group a:hover { background: #555; }
+    header {
+      background: #fff;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .lang-switch button {
+      margin: 10px 5px;
+      padding: 6px 12px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .pdf-container {
+      display: none;
+      width: 100%;
+      height: 90vh;
+    }
+    .pdf-container.active {
+      display: block;
+    }
   </style>
+  <script>
+    function switchPDF(lang) {
+      document.querySelectorAll('.pdf-container').forEach(div => {
+        div.classList.remove('active');
+      });
+      const target = document.getElementById(`pdf-${lang}`);
+      if (target) target.classList.add('active');
+    }
+    window.onload = () => {
+      switchPDF('zh');
+    };
+  </script>
 </head>
 <body>
-  <h1>《不幸的贾玛尔》</h1>
-  <div class="link-group">
-    <a href="jamal_kk.html">📘 Қазақша нұсқасы</a>
-    <a href="jamal_zh.html">📗 中文版</a>
-    <a href="jamal_en.html">📙 English Version</a>
+  <header>
+    <h1>不幸的贾玛尔 | Бақытсыз Жамал | The Unfortunate Jamal</h1>
+    <div class="lang-switch">
+      <button onclick="switchPDF('zh')">中文</button>
+      <button onclick="switchPDF('kk')">Қазақша</button>
+      <button onclick="switchPDF('en')">English</button>
+    </div>
+  </header>
+
+  <div id="pdf-zh" class="pdf-container active">
+    <embed src="/assets/Jamal_zh.pdf#toolbar=0" type="application/pdf" width="100%" height="100%"/>
+  </div>
+  <div id="pdf-kk" class="pdf-container">
+    <embed src="/assets/Jamal_kk.pdf#toolbar=0" type="application/pdf" width="100%" height="100%"/>
+  </div>
+  <div id="pdf-en" class="pdf-container">
+    <p>英文版本尚未上传。</p>
   </div>
 </body>
 </html>
