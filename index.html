@@ -1,8 +1,8 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Steppe Voices</title>
   <style>
     body {
@@ -13,18 +13,24 @@
     }
     header {
       background: #fff;
-      padding: 0;
-      text-align: center;
       border-bottom: 1px solid #ddd;
     }
     .hero-banner {
-      background: url('/assets/logo.png') no-repeat center center;
-      background-size: contain;
-      height: 200px;
-      margin-bottom: 10px;
+      background: url('assets/steppe-banner.jpg') no-repeat center center;
+      background-size: cover;
+      height: 250px;
+      position: relative;
+    }
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 120px;
+      height: auto;
     }
     .language-switch {
-      margin: 10px;
+      text-align: center;
+      padding: 15px;
     }
     .language-switch button {
       margin: 0 5px;
@@ -40,51 +46,23 @@
     .section {
       padding: 20px;
       max-width: 800px;
-      margin: auto;
+      margin: 20px auto;
       background: #fff;
-      margin-top: 20px;
       border-radius: 8px;
     }
-    h1 {
-      margin-top: 0;
-    }
-    .works ul {
-      padding-left: 20px;
-    }
-    .categories {
-      margin-top: 10px;
-      font-style: italic;
-      font-size: 0.9em;
-    }
-    .comments {
-      margin-top: 30px;
-      padding-top: 10px;
-      border-top: 1px solid #ccc;
-    }
-    .comments input, .comments textarea {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    .comments button {
-      padding: 8px 16px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .work-card {
+    .works .work-card {
       background: #f0f0f0;
-      border-radius: 6px;
       padding: 10px 15px;
+      border-radius: 6px;
       margin-bottom: 10px;
     }
     .work-card:hover {
       background: #e8e8e8;
+    }
+    .categories {
+      margin-top: 8px;
+      font-style: italic;
+      font-size: 0.9em;
     }
     footer {
       text-align: center;
@@ -107,7 +85,9 @@
 </head>
 <body>
   <header>
-    <div class="hero-banner"></div>
+    <div class="hero-banner">
+      <img src="assets/logo.png" alt="Steppe Voices Logo" class="logo" />
+    </div>
     <div class="language-switch">
       <button onclick="switchLanguage('kk')">Қазақша</button>
       <button onclick="switchLanguage('zh')">中文</button>
@@ -116,18 +96,20 @@
   </header>
 
   <div class="section" data-lang="kk">
-    <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған. Оның мақсаты – қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
-    <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
+    <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған.</p>
+    <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Қазіргі уақытта АҚШ-тағы Бингемтон университетінде тарих бойынша PhD оқып жүр.</p>
   </div>
 
   <div class="section" data-lang="zh">
-    <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。该项目旨在帮助研究哈萨克文化的学者和不会母语的中文使用者，了解丰富的哈萨克文学与历史传统。</p>
-    <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目，研究方向为中亚历史与哈萨克文化。</p>
+    <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。</p>
+    <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目。</p>
+    <p><em>如需使用文章中的内容，请联系译者。</em></p>
   </div>
 
   <div class="section" data-lang="en">
-    <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature in Kazakh, Chinese, and English. It aims to support scholars of Kazakh culture and Chinese-speaking Kazakhs in accessing and engaging with their literary heritage.</p>
-    <p><strong>About the Translator:</strong> Aidos Amantai was born in 1989 and grew up in Beijing. He received his B.A. from Al-Farabi Kazakh National University and is currently pursuing a PhD in History at Binghamton University, State University of New York.</p>
+    <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature.</p>
+    <p><strong>About the Translator:</strong> Aidos Amantai, born in 1989, grew up in Beijing. He is currently pursuing a PhD in History at Binghamton University.</p>
+    <p><em>If you wish to use any content from this project, please contact the translator.</em></p>
   </div>
 
   <div class="section works">
@@ -141,16 +123,6 @@
         <span data-lang="zh">分类：小说</span>
         <span data-lang="en">Category: Novel</span>
       </div>
-    </div>
-    <div class="comments">
-      <h3 data-lang="kk">Пікір қалдыру:</h3>
-      <h3 data-lang="zh">留言：</h3>
-      <h3 data-lang="en">Leave a comment:</h3>
-      <input type="text" placeholder="Name / 名字 / Атыңыз">
-      <textarea rows="4" placeholder="Your comment / 留言内容 / Пікіріңіз"></textarea>
-      <button data-lang="kk">Жіберу</button>
-      <button data-lang="zh">提交</button>
-      <button data-lang="en">Submit</button>
     </div>
   </div>
 
