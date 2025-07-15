@@ -1,1 +1,113 @@
-<!-- index.html content will be generated next -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steppe Voices – Jamal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      height: 60px;
+    }
+    .language-selector button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      font-size: 1em;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+    .banner {
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem auto;
+      display: block;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    .about {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+    }
+    .about p {
+      line-height: 1.6;
+    }
+    .pdf-viewer iframe {
+      width: 90%;
+      height: 90vh;
+      border: none;
+      display: block;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Steppe Voices Logo" class="logo" />
+    <div class="language-selector">
+      <button onclick="setLang('kk')">Қазақша</button>
+      <button onclick="setLang('zh')">中文</button>
+      <button onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <a href="#" onclick="scrollToPdf()">
+    <img src="jamal_thumbnail.png" alt="Jamal Cover" class="banner" />
+  </a>
+
+  <div class="about" id="about">
+    <div class="section" data-lang="kk">
+      <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған. Оның мақсаты – қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
+      <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
+      <p><em>Егер осы сайттағы материалдарды пайдалану ниетіңіз болса, автормен хабарласыңыз: aamanta1@binghamton.edu</em></p>
+    </div>
+
+    <div class="section" data-lang="zh">
+      <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。该项目旨在帮助研究哈萨克文化的学者和不会母语的中文使用者，了解丰富的哈萨克文学与历史传统。</p>
+      <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目，研究方向为中亚历史与哈萨克文化。</p>
+      <p><em>如需使用本站内容，请联系译者：aamanta1@binghamton.edu</em></p>
+    </div>
+
+    <div class="section" data-lang="en">
+      <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature in Kazakh, Chinese, and English. It aims to support scholars of Kazakh culture and Chinese-speaking Kazakhs in accessing and engaging with their literary heritage.</p>
+      <p><strong>About the Translator:</strong> Aidos Amantai was born in 1989 and grew up in Beijing. He received his B.A. from Al-Farabi Kazakh National University and is currently pursuing a PhD in History at Binghamton University, State University of New York.</p>
+      <p><em>If you wish to use content from this site, please contact the translator: aamanta1@binghamton.edu</em></p>
+    </div>
+  </div>
+
+  <div class="pdf-viewer" id="pdf-viewer">
+    <iframe id="pdf-frame" src="Jamal_zh.pdf#toolbar=0"></iframe>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = section.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+      const frame = document.getElementById('pdf-frame');
+      if (lang === 'kk') frame.src = 'Jamal_kk.pdf#toolbar=0';
+      else if (lang === 'zh') frame.src = 'Jamal_zh.pdf#toolbar=0';
+      else if (lang === 'en') frame.src = 'Jamal_en.pdf#toolbar=0';
+    }
+    function scrollToPdf() {
+      document.getElementById('pdf-viewer').scrollIntoView({ behavior: 'smooth' });
+    }
+    setLang('zh'); // default
+  </script>
+</body>
+</html>
