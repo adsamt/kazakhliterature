@@ -1,111 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steppe Voices | 草原之声</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steppe Voices</title>
   <style>
     body {
-      margin: 0;
       font-family: sans-serif;
-      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
     }
     header {
-      background-color: #fff;
-      padding: 1em;
+      background: #fff;
+      padding: 20px;
       border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
     }
-    header img {
-      height: 60px;
+    .hero-banner {
+      background: url('assets/logo.png') no-repeat center center;
+      background-size: contain;
+      height: 200px;
     }
-    .lang-switch {
-      display: flex;
-      gap: 1em;
+    nav {
+      text-align: center;
+      margin: 20px;
     }
-    .lang-switch a {
+    nav a {
+      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: bold;
     }
-    .intro {
+    .section {
       max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1em;
-    }
-    .works {
-      display: flex;
-      justify-content: center;
-      margin-top: 2em;
-    }
-    .work-card {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 1em;
-      text-align: center;
-      width: 280px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    }
-    .work-card img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 1em;
+      margin: 0 auto;
+      padding: 20px;
     }
     footer {
+      background: #eee;
       text-align: center;
-      padding: 2em 1em;
+      padding: 15px;
       font-size: 0.9em;
-      color: #777;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="Steppe Voices Logo">
-    <div class="lang-switch">
-      <a href="#" onclick="switchLang('zh')">中文</a>
-      <a href="#" onclick="switchLang('kk')">Қазақша</a>
-      <a href="#" onclick="switchLang('en')">English</a>
-    </div>
+    <div class="hero-banner"></div>
+    <nav>
+      <a href="jamal_kk.html">Қазақша</a>
+      <a href="jamal_zh.html">中文</a>
+      <a href="jamal.html">Jamal Project</a>
+    </nav>
   </header>
 
-  <div class="intro" id="zh">
-    <h1>草原之声 Steppe Voices</h1>
-    <p>本项目致力于翻译、保存和传播哈萨克文学与历史资料，所有作品禁止转载，欢迎以学术或个人用途查阅。联系方式：aamanta1@binghamton.edu</p>
+  <div class="section" data-lang="zh">
+    <h2>项目简介</h2>
+    <p>Steppe Voices 是一个致力于哈萨克文学翻译与传播的平台。我们希望通过中英文对照的方式，让更多人了解哈萨克人民丰富的文化遗产。</p>
   </div>
 
-  <div class="intro" id="kk" style="display: none;">
-    <h1>Дала үні Steppe Voices</h1>
-    <p>Бұл жоба қазақ әдебиеті мен тарихына қатысты материалдарды аудару, сақтау және таратуға арналған. Барлық шығармаларды көшіріп жариялауға тыйым салынады. Байланыс: aamanta1@binghamton.edu</p>
+  <div class="section" data-lang="en">
+    <h2>Project Introduction</h2>
+    <p>Steppe Voices is a platform dedicated to the translation and dissemination of Kazakh literature. We aim to bring the cultural heritage of the Kazakh people to a broader audience through bilingual editions.</p>
   </div>
 
-  <div class="intro" id="en" style="display: none;">
-    <h1>Steppe Voices</h1>
-    <p>This project is dedicated to translating, preserving, and sharing Kazakh literary and historical works. All materials are not for redistribution. For academic and personal access only. Contact: aamanta1@binghamton.edu</p>
-  </div>
-
-  <div class="works">
-    <div class="work-card">
-      <a href="jamal.html">
-        <img src="jamal_thumbnail.png" alt="Jamal Thumbnail">
-        <h2>Baqytsyz Jamal | 不幸的贾玛尔 | The Unfortunate Jamal</h2>
-      </a>
-    </div>
+  <div class="section" data-lang="kk">
+    <h2>Жоба туралы</h2>
+    <p>Steppe Voices — қазақ әдебиетін аудару мен таратуға арналған платформа. Біз қазақ халқының бай мәдени мұрасын екі тілде жеткізуді мақсат етеміз.</p>
   </div>
 
   <footer>
-    <p>© Steppe Voices | 联系方式: <a href="mailto:aamanta1@binghamton.edu">aamanta1@binghamton.edu</a></p>
+    Contact: <a href="mailto:aamanta1@binghamton.edu">aamanta1@binghamton.edu</a>
   </footer>
-
-  <script>
-    function switchLang(lang) {
-      document.getElementById('zh').style.display = lang === 'zh' ? 'block' : 'none';
-      document.getElementById('kk').style.display = lang === 'kk' ? 'block' : 'none';
-      document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
-    }
-  </script>
 </body>
 </html>
