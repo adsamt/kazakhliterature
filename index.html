@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -45,9 +46,6 @@
     h1 {
       margin-top: 0;
     }
-    .works ul {
-      padding-left: 20px;
-    }
     .categories {
       margin-top: 10px;
       font-style: italic;
@@ -74,14 +72,11 @@
       border-radius: 4px;
       cursor: pointer;
     }
-    .work-card {
-      background: #f0f0f0;
-      border-radius: 6px;
-      padding: 10px 15px;
-      margin-bottom: 10px;
-    }
-    .work-card:hover {
-      background: #e8e8e8;
+    .comment-display {
+      margin-top: 20px;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
     }
     footer {
       text-align: center;
@@ -99,6 +94,20 @@
         btn.classList.toggle('active', btn.getAttribute('onclick').includes(lang));
       });
     }
+
+    function addComment() {
+      const name = document.getElementById('comment-name').value.trim();
+      const text = document.getElementById('comment-text').value.trim();
+      if (name && text) {
+        const commentBox = document.getElementById('comment-display');
+        const newComment = document.createElement('div');
+        newComment.innerHTML = "<strong>" + name + "</strong>: " + text;
+        commentBox.appendChild(newComment);
+        document.getElementById('comment-name').value = "";
+        document.getElementById('comment-text').value = "";
+      }
+    }
+
     window.onload = () => switchLanguage('zh');
   </script>
 </head>
@@ -111,24 +120,6 @@
       <button onclick="switchLanguage('en')">English</button>
     </div>
   </header>
-
-  <div class="section" data-lang="kk">
-    <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған. Оның мақсаты – қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
-    <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
-    <p><em>Егер осы сайттағы материалдарды пайдалану ниетіңіз болса, автормен хабарласыңыз.</em></p>
-  </div>
-
-  <div class="section" data-lang="zh">
-    <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。该项目旨在帮助研究哈萨克文化的学者和不会母语的中文使用者，了解丰富的哈萨克文学与历史传统。</p>
-    <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目，研究方向为中亚历史与哈萨克文化。</p>
-    <p><em>如需使用本站内容，请联系译者。</em></p>
-  </div>
-
-  <div class="section" data-lang="en">
-    <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature in Kazakh, Chinese, and English. It aims to support scholars of Kazakh culture and Chinese-speaking Kazakhs in accessing and engaging with their literary heritage.</p>
-    <p><strong>About the Translator:</strong> Aidos Amantai was born in 1989 and grew up in Beijing. He received his B.A. from Al-Farabi Kazakh National University and is currently pursuing a PhD in History at Binghamton University, State University of New York.</p>
-    <p><em>If you wish to use content from this site, please contact the translator.</em></p>
-  </div>
 
   <div class="section works">
     <h2 data-lang="kk">Шығармалар:</h2>
@@ -146,11 +137,10 @@
       <h3 data-lang="kk">Пікір қалдыру:</h3>
       <h3 data-lang="zh">留言：</h3>
       <h3 data-lang="en">Leave a comment:</h3>
-      <input type="text" placeholder="Name / 名字 / Атыңыз">
-      <textarea rows="4" placeholder="Your comment / 留言内容 / Пікіріңіз"></textarea>
-      <button data-lang="kk">Жіберу</button>
-      <button data-lang="zh">提交</button>
-      <button data-lang="en">Submit</button>
+      <input id="comment-name" type="text" placeholder="Name / 名字 / Атыңыз">
+      <textarea id="comment-text" rows="4" placeholder="Your comment / 留言内容 / Пікіріңіз"></textarea>
+      <button onclick="addComment()">Submit / 提交 / Жіберу</button>
+      <div id="comment-display" class="comment-display"></div>
     </div>
   </div>
 
