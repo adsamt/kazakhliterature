@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steppe Voices</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
+    header { background: #fff; padding: 0; text-align: center; border-bottom: 1px solid #ddd; }
+    .hero-banner {
+      background: url('assets/logo.png') no-repeat center center;
+      background-size: contain;
+      height: 160px;
+      margin-bottom: 10px;
+    }
+    .language-switch { margin: 10px; }
+    .language-switch button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+    }
+    .language-switch button.active {
+      background: #333;
+      color: white;
+    }
+    .section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    .work-card {
+      background: #f0f0f0;
+      border-radius: 6px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+    }
+    .work-card:hover { background: #e8e8e8; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick').includes(lang));
+      });
+    }
+    window.onload = () => switchLanguage('zh');
+  </script>
+</head>
+<body>
+  <header>
+    <div class="hero-banner"></div>
+    <div class="language-switch">
+      <button onclick="switchLanguage('kk')">Қазақша</button>
+      <button onclick="switchLanguage('zh')">中文</button>
+      <button onclick="switchLanguage('en')">English</button>
+    </div>
+  </header>
+
+  <div class="section" data-lang="kk">
+    <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған. Оның мақсаты – қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
+    <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
+  </div>
+
+  <div class="section" data-lang="zh">
+    <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。该项目旨在帮助研究哈萨克文化的学者和不会母语的中文使用者，了解丰富的哈萨克文学与历史传统。</p>
+    <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目，研究方向为中亚历史与哈萨克文化。</p>
+    <p>如需使用网站中的内容，请联系 aamanta1@binghamton.edu</p>
+  </div>
+
+  <div class="section" data-lang="en">
+    <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature in Kazakh, Chinese, and English. It aims to support scholars of Kazakh culture and Chinese-speaking Kazakhs in accessing their heritage.</p>
+    <p><strong>Translator:</strong> Aidos Amantai was born in 1989 and raised in Beijing. He earned his undergraduate degree from Al-Farabi Kazakh National University and is currently a PhD student in history at Binghamton University, State University of New York.</p>
+    <p>Contact: aamanta1@binghamton.edu</p>
+  </div>
+
+  <div class="section">
+    <h2>作品 / Works / Шығармалар</h2>
+    <div class="work-card">
+      <h3>Бақытсыз Жамал</h3>
+      <p><a href="jamal_kk.html">Қазақша</a> | <a href="jamal_zh.html">中文</a> | <a href="jamal_en.html">English</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Steppe Voices | Contact: <a href="mailto:aamanta1@binghamton.edu">aamanta1@binghamton.edu</a></p>
+  </footer>
+</body>
+</html>
