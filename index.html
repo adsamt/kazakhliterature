@@ -1,120 +1,78 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Steppe Voices</title>
   <style>
     body {
       font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
-      color: #222;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #fff;
     }
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
+      margin-bottom: 2rem;
     }
-    .logo img {
-      height: 60px;
-    }
-    .lang-switch {
-      font-size: 1em;
-    }
-    .lang-switch a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: #333;
-      cursor: pointer;
-    }
-    .lang-switch a.active {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      text-align: center;
-      padding: 0 20px;
+    header img.logo {
+      width: 120px;
+      height: auto;
+      margin-right: 1rem;
     }
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin: 0;
     }
-    .description {
-      text-align: left;
-      margin-top: 20px;
+    .about {
+      margin-bottom: 2rem;
     }
-    .description p {
+    .about p {
       line-height: 1.6;
     }
     .cover-image {
-      margin-top: 30px;
+      width: 100%;
+      max-width: 600px;
+      margin: 1rem auto;
+      display: block;
+      border: 1px solid #ccc;
     }
-    .cover-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .pdf-links {
+      margin-top: 2rem;
+    }
+    .pdf-links a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Steppe Voices Logo">
-    </div>
-    <div class="lang-switch">
-      <a onclick="setLang('zh')" id="link-zh" class="active">中文</a>
-      <a onclick="setLang('kk')" id="link-kk">Қазақша</a>
-      <a onclick="setLang('en')" id="link-en">English</a>
-    </div>
+    <img src="logo.png" alt="Steppe Voices Logo" class="logo" />
+    <h1>Steppe Voices</h1>
   </header>
 
-  <main>
-    <h1>Steppe Voices</h1>
+  <section class="about">
+    <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде — қазақ, қытай және ағылшын тілдерінде — аудару мен сақтау мақсатында құрылған. Оның мақсаты — қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
+    <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
+    <p><em>Егер осы сайттағы материалдарды пайдалану ниетіңіз болса, автормен хабарласыңыз: aamanta1@binghamton.edu</em></p>
+  </section>
 
-    <div class="description" data-lang="zh">
-      <p><strong>项目简介：</strong>这是一个致力于翻译和保存哈萨克文学的三语平台，使用哈萨克语、中文和英文三种语言。该项目旨在帮助研究哈萨克文化的学者和不会母语的中文使用者，了解丰富的哈萨克文学与历史传统。</p>
-      <p><strong>译者介绍：</strong>艾多斯·阿曼泰，1989年生，成长于北京，哈萨克国立大学本科毕业，现就读于纽约州立大学宾汉姆顿分校历史系博士项目，研究方向为中亚历史与哈萨克文化。</p>
-      <p><em>如需使用本站内容，请联系译者：aamanta1@binghamton.edu</em></p>
-    </div>
+  <img src="cover.png" alt="Jamal Cover" class="cover-image" />
 
-    <div class="description" data-lang="kk" style="display:none;">
-      <p><strong>Жоба туралы:</strong> Бұл жоба қазақ әдебиетін үш тілде – қазақ, қытай және ағылшын тілдерінде – аудару мен сақтау мақсатында құрылған. Оның мақсаты – қазақ әдебиетін зерттейтін зерттеушілер мен қытай тілін қолданатын қазақтар үшін қазақ мәдениеті мен тарихына тереңірек үңілуге мүмкіндік беру.</p>
-      <p><strong>Аудармашы:</strong> Айдос Амантай 1989 жылы дүниеге келген, балалық шағы Бейжіңде өтті. Әл-Фараби атындағы Қазақ ұлттық университетін бітірген. Қазіргі уақытта АҚШ-тың Бингемтон қаласындағы Нью-Йорк штаты университетінде тарих мамандығы бойынша докторантурада оқиды.</p>
-      <p><em>Егер осы сайттағы материалдарды пайдалану ниетіңіз болса, автормен хабарласыңыз: aamanta1@binghamton.edu</em></p>
-    </div>
-
-    <div class="description" data-lang="en" style="display:none;">
-      <p><strong>About the Project:</strong> Steppe Voices is a trilingual initiative dedicated to translating and preserving Kazakh literature in Kazakh, Chinese, and English. It aims to support scholars of Kazakh culture and Chinese-speaking Kazakhs in accessing and engaging with their literary heritage.</p>
-      <p><strong>About the Translator:</strong> Aidos Amantai was born in 1989 and grew up in Beijing. He received his B.A. from Al-Farabi Kazakh National University and is currently pursuing a PhD in History at Binghamton University, State University of New York.</p>
-      <p><em>If you wish to use content from this site, please contact the translator: aamanta1@binghamton.edu</em></p>
-    </div>
-
-    <div class="cover-image">
-      <img src="cover.png" alt="Kazakh Girl Illustration">
-    </div>
-  </main>
-
-  <script>
-    function setLang(lang) {
-      const sections = document.querySelectorAll('.description');
-      const links = document.querySelectorAll('.lang-switch a');
-      sections.forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-      });
-      links.forEach(el => {
-        el.classList.remove('active');
-        if (el.id === 'link-' + lang) el.classList.add('active');
-      });
-    }
-  </script>
+  <section class="pdf-links">
+    <h2>Download PDFs:</h2>
+    <a href="Jamal_kk.pdf" target="_blank">Қазақша нұсқасы</a>
+    <a href="Jamal_zh.pdf" target="_blank">中文版本</a>
+    <a href="Jamal_en.pdf" target="_blank">English Version</a>
+  </section>
 </body>
 </html>
